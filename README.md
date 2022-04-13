@@ -1,10 +1,10 @@
 # Pigtech
-<h1>Site estruturado a partir de HTML/CSS</h1>
+<h1>Site institucional PigTech</h1>
 <h3>
   <ul>
-    <li>Site institucional</li>
-    <li>Páginas de Cadastro e Login</li>
-    <li>Página de simulaçao com calculadora</li>
-    <li>Página de Dashboard com CHART.JS</li>
+    <li>Página Quem Somos</li>
+    <li>Pagina de Cadastro e Login</li>
+    <li>Página de Dashboard</li>
+    <li>Página da Calculadora</li>
   </ul>
 </h3>
