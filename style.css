@@ -10,7 +10,7 @@
 
 body{
     margin: 0;
-    font-family: monospace;
+    font-family:'Poppins';
 }
 
 .container{
@@ -43,6 +43,8 @@ body{
     background-image: url(midia/porco.jpg);
     background-size: cover;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
+    font-family: 'Poppins';
+    
 }
 .banner .container{
     width: 100%;
@@ -58,7 +60,6 @@ body{
     font-size: 45px;
     width: 550px;
     margin-left: 150px;
-    font-family: Arial, Helvetica, sans-serif;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.781);
     margin-top: 150px;
 }
@@ -66,7 +67,6 @@ button.btn0{
     width: 250px;
     height: 70px;
     align-self: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
     color: white;
     font-weight: 500;
@@ -78,7 +78,6 @@ button.btn0{
 button.btn1{
     width: 250px;
     height: 70px;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
     color: white;
     font-weight: 500;
@@ -87,13 +86,10 @@ button.btn1{
     border: 0;
 }
 
-button.btn3{
-    width: 250px;
-    height: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(255, 115, 0);
+.btns a{
     color: white;
-    font-size: 15px;
+    font-size: larger;
+    align-self: center;
 }
 
 
@@ -115,9 +111,10 @@ button.btn3{
 }
 
 .form-box{
-    background-color: rgba(202, 187, 174, 0.452);
-    font-weight: bolder;
+    background-color: rgba(202, 187, 174, 0.815);
+    font-family: 'Poppins';
     font-size: 16px;
+    margin: 0;
 }
 
 
@@ -158,4 +155,9 @@ button.btn3{
 .footer p{
     font-size: 12px;
     margin: auto;
+}
+
+h4{
+    margin: 10px;
+
 }
