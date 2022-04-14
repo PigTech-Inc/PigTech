@@ -66,7 +66,7 @@ body{
 button.btn0{
     width: 250px;
     height: 70px;
-    align-self: center;
+    margin-left: 145px;
     font-size: larger;
     color: white;
     font-weight: 500;
