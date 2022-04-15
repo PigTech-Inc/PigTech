@@ -1,51 +1,63 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    outline: none;
+    border: none;
+    /* setando para quando algum elemento for ultrapassar algum limite tomar alguma decisao automatica (redimensiona automaticamente) */
+    overflow: auto;
+}
 .header{
     color: #ffffff;
     background-color: gray;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.527);
+<<<<<<< HEAD
+=======
     
 }
 
 body{
     margin: 0;
     font-family:'Poppins';
+>>>>>>> cedc40bfad35c3bbf991a8b78d5173ac80d40d69
 }
 
 .container{
     width: 80%;
     margin: auto;
 }
-
 .header .container{
     display: flex;
     justify-content: space-between;
 }
-
-.navbar{
+.navbar {
     display: flex;
     list-style: none;
     justify-content: space-between;
     padding: 0;
     width: 600px;
     align-items: center;
+<<<<<<< HEAD
+=======
     
     
+>>>>>>> cedc40bfad35c3bbf991a8b78d5173ac80d40d69
 }
-.header a{
+.header a {
     text-decoration: none;
     color: #ffffff;
+    font-family: monospace;
 }
-
 .banner{
     width: 100% ;
     height: 580px;
     background-image: url(midia/porco.jpg);
     background-size: cover;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
-    font-family: 'Poppins';
-    
 }
 .banner .container{
     width: 100%;
@@ -61,8 +73,10 @@ body{
     font-size: 45px;
     width: 550px;
     margin-left: 150px;
+    font-family: Arial, Helvetica, sans-serif;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.781);
     margin-top: 150px;
+    margin-bottom: 25px;
 }
 button.btn0{
     width: 250px;
@@ -91,9 +105,8 @@ button.btn1{
     color: white;
     font-size: larger;
     align-self: center;
+
 }
-
-
 .card{
     display: flex;
     flex-direction: column;
@@ -104,22 +117,17 @@ button.btn1{
     font-size: 30px;
     font-weight: bolder;
 }
-
 .btns{
     display: flex;
     flex-direction: column;
     justify-content:center ;
 }
-
 .form-box{
     background-color: rgba(202, 187, 174, 0.815);
     font-family: 'Poppins';
     font-size: 16px;
     margin: 0;
 }
-
-
-
 .banner button:hover{
     background-color: rgb(255, 132, 31);
     font-weight: 600;
@@ -127,21 +135,22 @@ button.btn1{
 .main{
     width: 100%;
     margin-top: 150px;
-    padding-left: 120px;
     font-family: 'Poppins';
+    
 }
 .qmsomos{
-    width:100%;
-    height: 300px;
     display: flex;
-    padding-bottom: 0px;
+}
+.qmsomos h1{
+    margin-top: 100px;
 }
 .main p{
-    width: 700px;
+    max-width: 700px;
 }
 .pq{
     display: flex;
     text-align: end;
+    padding-bottom: 10px;
 }
 .footer .container{
     width: 100%;
