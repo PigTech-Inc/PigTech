@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
     outline: none;
     border: none;
     /* setando para quando algum elemento for ultrapassar algum limite tomar alguma decisao automatica (redimensiona automaticamente) */
@@ -23,7 +23,7 @@ body {
     color: #ffffff;
     background-color: gray;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.527);
-    font-size: larger;
+    
 }
 
 .container {
@@ -48,7 +48,7 @@ body {
 .header a {
     text-decoration: none;
     color: #ffffff;
-    font-family: monospace;
+    font-family: Poppins;
 }
 
 .agora {
