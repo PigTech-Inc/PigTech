@@ -15,6 +15,15 @@
     color: #ffffff;
     background-color: gray;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.527);
+<<<<<<< HEAD
+=======
+    
+}
+
+body{
+    margin: 0;
+    font-family:'Poppins';
+>>>>>>> cedc40bfad35c3bbf991a8b78d5173ac80d40d69
 }
 
 .container{
@@ -32,6 +41,11 @@
     padding: 0;
     width: 600px;
     align-items: center;
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> cedc40bfad35c3bbf991a8b78d5173ac80d40d69
 }
 .header a {
     text-decoration: none;
