@@ -56,8 +56,8 @@ function calcular() {
         `
                     <div class='div_resu_inteiro'>
 
-                        <p class='desc_resultado'>Com base em um custo de ${custoPorco} para um porco atingir seu peso ideal de abate, um número de abates anuais de ${qtdPorco} e um valor de venda do porco pós abate de 
-                        ${valorPorco} obterá os seguintes
+                        <p class='desc_resultado'>Com base em um custo de <u>${custoPorco}</u> para um porco atingir seu peso ideal de abate, um número de abates anuais de <u>${qtdPorco}</u> e um valor de venda do porco pós abate de 
+                        <u>${valorPorco}</u> obterá os seguintes
                         resultados:</p>
                             <br>
                         <div class='semNos'>
