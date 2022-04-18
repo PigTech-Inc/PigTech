@@ -21,7 +21,7 @@
     color: #ffffff;
     background-color: gray;
     box-shadow: 0px 5px 20px black;
-    height: 7vh;
+    height: 8vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +32,16 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+}
+
+.header h1 a{
+    transition: 0.5s;
+}
+
+.header h1 a:hover{
+    color: #ff7300;
+    text-shadow: white 1px 0px 0px, white 0px 1px 0, white -1px 0px 0, white 0px -1px 0, rgb(54, 54, 54) 1px 3px 5px;;
+
 }
 
 .navbar {
@@ -87,6 +97,12 @@
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.781);
 }
 
+.banner button:hover{
+    background-color: rgb(255, 132, 31);
+    box-shadow: gray 0px 3px 15px;
+    font-weight: 600;
+}
+
 .btn0{
     margin-top: 5vh;
     margin-bottom: 10px;
@@ -102,8 +118,8 @@
     transition: 0.5s;
 }
 
-.btn0:hover{
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.781);
+.banner .btn0:hover{
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.781);
     transition: 0.5s;
 }
 
@@ -190,12 +206,6 @@
     cursor: pointer;
     margin-top: 3vh;
     margin-bottom: 2vh;
-}
-
-.banner button:hover{
-    background-color: rgb(255, 132, 31);
-    box-shadow: gray 0px 3px 15px;
-    font-weight: 600;
 }
 
 .btns p{
