@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashbord</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="banner">
+    <div class="container_banner">
+      <div class="calculadora">
+
+        <ul class="navbar">
+          <div style="width: 800px;">
+            <canvas id="myChart"></canvas>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  const labels = [
+    '06:00',
+    '60:30',
+    '07:00',
+    '07:30',
+    '08:00',
+    '08:30',
+    '09:00',
+    '09:30',
+    '10:00',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Variação de temperatura em ºC',
+      backgroundColor: 'rgb(255, 125, 0)',
+      borderColor: 'rgb(255, 125, 00)',
+      data: [23, 24, 23, 26, 25, 26, 27, 28, 27],
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+</script>
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+
+
+</html>
