@@ -92,3 +92,78 @@ function calcular() {
                 `
     div_resultado.style.padding = '8px';
 }
+
+/* ------------------------------------
+                CHARTJS
+----------------------------------------- */
+const labels = [
+    '06:00',
+    '60:30',
+    '07:00',
+    '07:30',
+    '08:00',
+    '08:30',
+    '09:00',
+    '09:30',
+    '10:00',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Variação de temperatura em ºC',
+      backgroundColor: 'rgb(255, 125, 0)',
+      borderColor: 'rgb(255, 125, 00)',
+      data: [23.5, 24.4, 23.7, 24, 25.4, 26.7, 26.1, 28, 27.7],
+    }]
+  };
+  const data2 = {
+    labels: labels,
+    datasets: [{
+      label: 'Variação de temperatura em ºC',
+      backgroundColor: 'rgb(255, 125, 0)',
+      borderColor: 'rgb(255, 125, 00)',
+      data: [24.3, 25, 24.8, 25, 26.8, 26.5, 28, 27.8, 29],
+    }]
+  };
+  const data3 = {
+    labels: labels,
+    datasets: [{
+      label: 'Variação de temperatura em ºC',
+      backgroundColor: 'rgb(255, 125, 0)',
+      borderColor: 'rgb(255, 125, 00)',
+      data: [24, 24.7, 23.5, 25, 24.6, 26.8, 27.3, 28.2, 27.4],
+    }]
+  };
+
+  const granja_01 = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  const granja_02 = {
+    type: 'line',
+    data: data2,
+    options: {}
+  };
+  const granja_03 = {
+    type: 'line',
+    data: data3,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    granja_01
+  );
+
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    granja_02
+  );
+
+
+  const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    granja_03
+  );
