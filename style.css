@@ -21,7 +21,7 @@
     color: #ffffff;
     background-color: #04222d;
     box-shadow: 0px 5px 20px black;
-    height: 8vh;
+    height: 9vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,6 +45,7 @@
 }
 
 .header h1 a{
+    font-size: 5.3vh;
     transition: 0.5s;
 }
 
@@ -83,10 +84,7 @@
 
 .banner{
     width: 100% ;
-    height: 880px;
-    background: url(midia/porco.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 91vh;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
 }
 
@@ -96,18 +94,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: url(midia/porco.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .div_container_banner{
     width: 550px;
     margin-left: 10vw;
     text-align: center;
+    background: rgba(0, 0, 0, 0.247);
+    border-radius: 15px;
+    
 }
 
-.banner h1{
+.banner .container_banner .div_container_banner h1{
     color: rgb(255, 255, 255);
-    font-size: 40px;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.781);
+    font-size: 2.2em;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .btn0{
@@ -144,7 +149,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #eaeaea;
+    background-color: #e7e7e7;
 }
 
 .card{
@@ -157,11 +162,31 @@
 }
 
 .container_forms .card .banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 50%;
     height: 100%;
-    background-color: #201E1E;
-    background-image: none;
+    background:linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.589)), url(midia/porco_banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     box-shadow: none;
+}
+
+.container_forms .card .banner h1{
+    color: white;
+    font-size: 7vh;
+    margin-top: 1.7vh;
+    text-shadow: black 2px 2px 5px;
+}
+
+.container_forms .card .banner h2{
+    color: white;
+    font-size: 4vh;
+    margin-bottom: 1.7vh;
+    text-shadow: black 2px 2px 5px;
 }
 
 .form_box{
@@ -365,9 +390,17 @@
     width: 100%;
 }
 
+.main .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .qmsomos{
     display: flex;
     justify-content: space-evenly;
+    height: 50vh;
+    width: 100%;
 }
 
 .div_qmsomos {
@@ -379,12 +412,15 @@
 .qmsomos h1{
     margin-top: 0px;
 }
+
 .main p{
     max-width: 700px;
 }
 .pq{
     display: flex;
     justify-content: space-evenly;
+    height: 50vh;
+    width: 100%;
     padding-bottom: 10px;
 }
 .div_pq{
@@ -421,7 +457,7 @@ CALCULADORA.HTML !
 }
 
 .calculadora .div_input {
-    margin-top: 16px;
+    margin-top: 2.4vh;
     justify-self: start;
     width: 100%;
 }
@@ -438,9 +474,22 @@ CALCULADORA.HTML !
     height: 5vh;
     width: 100%;
     padding-left: 1vw;
-    font-size: 16px;
-    border-radius: 10px;
+    font-size: 2.6vh;
+    border-radius: 5px;
     transition: 0.5s;
+    margin-top: 2.2vh;
+}
+
+.calculadora .botao{
+    height: 5vh;
+    width: 30%;
+    font-size: 2.6vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: white;
+    background-color: #ff552a;
+    margin-bottom: 2.4vh;
+    margin-top: 2.4vh;
 }
 
 .resultados {
