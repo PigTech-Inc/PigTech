@@ -29,12 +29,8 @@
             <input class="input" type="text" placeholder="Sobrenome" id="input_sobrenome" name="sobrenome" />
           </div>
           <div class="elemento_input">
-            <label for="senha"></label>
-            <input class="input" type="password" placeholder="Senha" id="input_senha" name="senha">
-          </div>
-          <div class="elemento_input">
-            <label for="conf_senha"></label>
-            <input class="input" type="password" placeholder="Confirmar Senha" id="input_conf_senha" name="conf_senha">
+            <label for="cnpj"></label>
+            <input class="input" id="cnpj_input" type="text" placeholder="CNPJ" name="cnpj">
           </div>
           <div class="elemento_input">
             <label for="email"></label>
@@ -44,9 +40,17 @@
             <label for="telefone"></label>
             <input class="input" type="text" placeholder="Telefone" id="input_telefone" name="telefone" />
           </div>
+          <div class="elemento_input">
+            <label for="senha"></label>
+            <input class="input" type="password" placeholder="Senha" id="input_senha" name="senha">
+          </div>
+          <div class="elemento_input">
+            <label for="conf_senha"></label>
+            <input class="input" type="password" placeholder="Confirmar Senha" id="input_conf_senha" name="conf_senha">
+          </div>
           </div>
           <div class="botoes">
-            <input class="botao" type="submit" value="Cadastrar" />
+            <input class="botao" type="submit" value="Cadastrar" onclick="validar()"/>
             <a href="login.html">Já possui conta?</a>
           </div>
         </form>
@@ -54,19 +58,45 @@
     </div>
   </body>
 </html>
-
-<!-- <script>
+<script>
   function validar() {
-    var email = email_input.value;
-    var email_formatado = email.toLowerCase();
-    if (email_formatado.indexOf("@") == -1) {
+    var nomeVar = input_nome.value;
+    var sobrenomeVar = input_sobrenome.value;
+    var email_unformated = input_email.value;
+    //var para transoformar email em caixa baixa
+    var emailVar = email_unformated.toLowerCase();
+    var telefoneVar = input_telefone.value;
+    var cnpjVar = cnpj_input.value
+    var senhaVar = input_senha.value;
+    //var para verificar senha
+    var senha_confirm = input_conf_senha.value;
+
+    //precisa adicionar as devidas validações
+    if (emailVar.indexOf("@") == -1) {
       alert("Insira um E-mail valido.");
-    } else if (email_formatado.Length < 10) {
+    } else if (emailVar.Length < 10) {
       alert("Insira um E-mail valido.");
-    } else if (email_formatado.endsWith(".com") == false) {
+    } else if (emailVar.endsWith(".com") == false) {
       alert("Insira um E-mail valido.");
     } else {
       window.location = "login.html";
     }
-  }
-</script> -->
+
+    fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                telefoneServer: telefoneVar,
+                cnpjServer: cnpjVar
+            })
+          })
+    }
+  
+</script>
