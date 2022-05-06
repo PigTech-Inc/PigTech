@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pig Tech - Cadastro</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <div class="container_forms">
-      <div class="card">
-        <div class="banner">
-          <h1>PigTech</h1>
-          <h2>A Inovação da Suinocultura!</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pig Tech - Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container_forms">
+    <div class="card">
+      <div class="banner">
+        <h1>PigTech</h1>
+        <h2>A Inovação da Suinocultura!</h2>
+      </div>
+      <form class="form_box">
+        <div class="titulo">
+          <h2>Crie sua conta</h2>
         </div>
-        <form class="form_box" action="login.html">
-          <div class="titulo">
-            <h2>Crie sua conta</h2>
-          </div>
-          <div class="inputs">
+        <div class="inputs">
           <div class="elemento_input">
             <label for="nome"></label>
             <input class="input" type="text" placeholder="Nome" id="input_nome" name="nome" />
@@ -48,15 +49,16 @@
             <label for="conf_senha"></label>
             <input class="input" type="password" placeholder="Confirmar Senha" id="input_conf_senha" name="conf_senha">
           </div>
-          </div>
-          <div class="botoes">
-            <input class="botao" type="submit" value="Cadastrar" onclick="validar()"/>
-            <a href="login.html">Já possui conta?</a>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="botoes">
+          <input class="botao" type="submit" value="Cadastrar" onclick="validar()" />
+          <a href="login.html">Já possui conta?</a>
+        </div>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 <script>
   function validar() {
@@ -83,20 +85,20 @@
     }
 
     fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                telefoneServer: telefoneVar,
-                cnpjServer: cnpjVar
-            })
-          })
-    }
-  
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        sobrenomeServer: sobrenomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        telefoneServer: telefoneVar,
+        cnpjServer: cnpjVar
+      })
+    })
+  }
+
 </script>
