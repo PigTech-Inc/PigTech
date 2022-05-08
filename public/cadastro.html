@@ -24,30 +24,37 @@
           <div class="elemento_input">
             <label for="nome"></label>
             <input class="input" type="text" placeholder="Nome" id="input_nome" name="nome" />
+            <span id="span_nome_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="sobrenome"></label>
             <input class="input" type="text" placeholder="Sobrenome" id="input_sobrenome" name="sobrenome" />
+            <span id="span_sobrenome_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="cnpj"></label>
             <input class="input" id="cnpj_input" type="text" placeholder="CNPJ" name="cnpj">
+            <span id="span_cnpj_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="email"></label>
             <input class="input" type="text" placeholder="Email" id="input_email" name="email" />
+            <span id="span_email_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="telefone"></label>
             <input class="input" type="text" placeholder="Telefone" id="input_telefone" name="telefone" />
+            <span id="span_tell_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="senha"></label>
             <input class="input" type="password" placeholder="Senha" id="input_senha" name="senha">
+            <span id="span_senha_alert" style="font-family:Arial; color:red;"></span>
           </div>
           <div class="elemento_input">
             <label for="conf_senha"></label>
             <input class="input" type="password" placeholder="Confirmar Senha" id="input_conf_senha" name="conf_senha">
+            <span id="span_conf_alert" style="font-family:Arial; color:red;"></span>
           </div>
         </div>
         <div class="botoes">
@@ -73,16 +80,66 @@
     //var para verificar senha
     var senha_confirm = input_conf_senha.value;
 
-    //precisa adicionar as devidas validações
-    if (emailVar.indexOf("@") == -1) {
-      alert("Insira um E-mail valido.");
-    } else if (emailVar.Length < 10) {
-      alert("Insira um E-mail valido.");
-    } else if (emailVar.endsWith(".com") == false) {
-      alert("Insira um E-mail valido.");
-    } else {
-      window.location = "login.html";
+
+
+
+    // validação das inpts 
+
+    if (senha_confirm == senhaVar) {
+
+
+      if (nomeVar == "") {
+        span_nome_alert.innerHTML = `<b>!</b>`
+      } else {
+        span_nome_alert.innerHTML = ""
+      }
+
+      if (sobrenomeVar == "") {
+        span_sobrenome_alert.innerHTML = `<b>!</b>`
+      } else {
+        span_sobrenome_alert.innerHTML = ""
+      }
+
+      if (emailVar.indexOf("@") == -1) {
+        span_email_alert.innerHTML = "<b>!</b>"
+      } else {
+        span_email_alert.innerHTML = ""
+
+        if (emailVar.endsWith("gmail.com") || emailVar.endsWith("email.com") || emailVar.endsWith("hotmail.com")) {
+          span_email_alert.innerHTML = ""
+        } else {
+          span_email_alert.innerHTML = "<b>!</b>"
+        }
+      }
+
+      if (cnpjVar == ""){
+        span_cnpj_alert.innerHTML = "<b>!</b>"
+      }else {
+        span_cnpj_alert.innerHTML = ""
+      }
+
+      if (telefoneVar == ""){
+        span_tell_alert.innerHTML = "<b>!</b>"
+      }else {
+        span_tell_alert.innerHTML = ""
+      }
+      if (senhaVar == ""){
+        span_senha_alert.innerHTML = "<b>!</b>"
+      }else{
+        span_senha_alert.innerHTML = ""
+      }
+
+    }else if(senha_confirm != senhaVar || senha_confirm == ""){
+
+      span_conf_alert.innerHTML = "<b>!</b>"
+    }else {
+      span_conf_alert = ""
+
+      
     }
+
+
+
 
     fetch("/usuarios/cadastrar", {
       method: "POST",
