@@ -175,12 +175,25 @@
     box-shadow: none;
 }
 
-.container_forms .card .banner h1{
+.container_forms .card .banner h1 a{
     color: white;
     font-size: 7vh;
     margin-top: 1.7vh;
+    text-decoration: none;
+
     text-shadow: black 2px 2px 5px;
+    transition: 0.5s;
 }
+
+.container_forms .card .banner h1 a:hover{
+
+    color: #ff552a;
+text-shadow: white 1px 0px 0px, white 0px 1px 0, white -1px 0px 0, white 0px -1px 0, rgb(54, 54, 54) 1px 3px 5px;
+text-decoration: none;
+transition: 0.5s;
+}
+
+
 
 .container_forms .card .banner h2{
     color: white;
