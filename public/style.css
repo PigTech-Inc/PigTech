@@ -625,17 +625,25 @@ FOOTER GLOBAL !
 ----------------------------------------------------
 */
 
-.footer .container{
+.footer{
     width: 100%;
     height: 15vh;
     background-color: rgb(29, 29, 29);
     color: white;
+    font-size: small;
     font-family: 'Poppins';
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: row;
+    justify-content: space-around;
+    list-style: circle;
+    margin-top: 25px;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+.res{
+    color: #bfbfbf;
 }
 
-.footer p{
-    font-size: 12px;
-    margin: auto;
-}
