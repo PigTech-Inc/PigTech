@@ -43,7 +43,7 @@
           </div>
           <div class="elemento_input">
             <label for="telefone"></label>
-            <input class="input" type="text" placeholder="Telefone" id="input_telefone" name="telefone" />
+            <input maxlength="11" class="input" type="text" placeholder="Telefone" id="input_telefone" name="telefone" />
             <span id="span_tell_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
@@ -82,7 +82,6 @@
 
     // validação das inpts 
 
-    if (senha_confirm == senhaVar) {
 
       if (nomeVar == "") {
         span_nome_alert.innerHTML = `<b>!</b>`
@@ -116,10 +115,10 @@
         span_cnpj_alert.innerHTML = "<b>!</b>"
       }
 
-      if (telefoneVar == ""){
-        span_tell_alert.innerHTML = "<b>!</b>"
-      }else {
+      if (telefoneVar.length == 12){
         span_tell_alert.innerHTML = ""
+      }else {
+        span_tell_alert.innerHTML = "<b>!</b>"
       }
 
       if (senhaVar == ""){
@@ -127,14 +126,15 @@
       }else{
         span_senha_alert.innerHTML = ""
       }
-
-    }else if(senha_confirm != senhaVar || senha_confirm == ""){
-
-      span_conf_alert.innerHTML = "<b>!</b>"
-    }else {
-      span_conf_alert = ""
       
-    }
+      if(senha_confirm == senhaVar){
+        span_conf_alert = ""  
+      }else {
+  
+        span_conf_alert.innerHTML = "<b>!</b>"
+      }
+
+    
 
 
     fetch("/usuarios/cadastrar", {
