@@ -33,7 +33,7 @@
           </div>
           <div class="elemento_input">
             <label for="cnpj"></label>
-            <input class="input" id="cnpj_input" type="text" placeholder="CNPJ" name="cnpj">
+            <input maxlength="14" class="input" id="cnpj_input" type="text" placeholder="CNPJ" name="cnpj">
             <span id="span_cnpj_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
@@ -80,13 +80,9 @@
     //var para verificar senha
     var senha_confirm = input_conf_senha.value;
 
-
-
-
     // validação das inpts 
 
     if (senha_confirm == senhaVar) {
-
 
       if (nomeVar == "") {
         span_nome_alert.innerHTML = `<b>!</b>`
@@ -105,7 +101,7 @@
       } else {
         span_email_alert.innerHTML = ""
 
-        if (emailVar.endsWith("gmail.com") || emailVar.endsWith("email.com") || emailVar.endsWith("hotmail.com")) {
+        if (emailVar.endsWith("gmail.com") == true || emailVar.endsWith("email.com") == true || emailVar.endsWith("hotmail.com") == true) {
           span_email_alert.innerHTML = ""
         } else {
           span_email_alert.innerHTML = "<b>!</b>"
@@ -114,8 +110,10 @@
 
       if (cnpjVar == ""){
         span_cnpj_alert.innerHTML = "<b>!</b>"
-      }else {
+      }else if( cnpjVar.length == 14){
         span_cnpj_alert.innerHTML = ""
+      }else {
+        span_cnpj_alert.innerHTML = "<b>!</b>"
       }
 
       if (telefoneVar == ""){
@@ -123,6 +121,7 @@
       }else {
         span_tell_alert.innerHTML = ""
       }
+
       if (senhaVar == ""){
         span_senha_alert.innerHTML = "<b>!</b>"
       }else{
@@ -134,11 +133,8 @@
       span_conf_alert.innerHTML = "<b>!</b>"
     }else {
       span_conf_alert = ""
-
       
     }
-
-
 
 
     fetch("/usuarios/cadastrar", {
