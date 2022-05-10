@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashbord</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <div class="header">
-      <div class="container_header">
-        <h1><a href="index.html">PigTech</a></h1>
-        <ul class="navbar">
-          <li><a href="index.html">Sobre</a></li>
-          <li><a href="calculadora.html">Simule</a></li>
-          <li><a href="index.html">Sair</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashbord</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="container_header">
+      <h1><a href="index.html">PigTech</a></h1>
+      <ul class="navbar">
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="calculadora.html">Simule</a></li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container_dashboard">
+    <div class="menu">
+      <h2>Bem vindo <span id="span_nome"></span> !</h2>
+      <h3>Granja atual: <span id="span_granja_atual"></span><br>
+        <button><</button><button>></button>
+      </h3>
+    </div>
+    <div class="dashboard">
+      <div class="chart">
+        Variação De temperatura Da Granja 01
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="chart">
+        Variação De Temperatura Da Granja 02
+        <canvas id="myChart2"></canvas>
+      </div>
+
+      <div class="chart">
+        Variação De Temperatura Da Granja 03
+        <canvas id="myChart3"></canvas>
       </div>
     </div>
+  </div>
 
-    <div class="banner">
-      <div class="container_chartJS">
-        <div class="chartJS">
-          <div style="width: 400px; color: white">
-            Variação De temperatura Da Granja 01
-            <br />
-            <canvas id="myChart"></canvas>
-          </div>
-
-          <br />
-
-          <div style="width: 400px; color: white">
-            Variação De Temperatura Da Granja 02
-            <canvas id="myChart2"></canvas>
-          </div>
-
-          <br />
-
-          <div style="width: 400px; color: white">
-            Variação De Temperatura Da Granja 03
-            <canvas id="myChart3"></canvas>
-          </div>
-        </div>
+  <div class="footer">
+    <div class="container">
+      <ul>
+        <li><a href="">• Fale Conosco</a></li>
+        <li><a href="">• Sobre nós</a></li>
+        <li><a href="">• Seja nosso parceiro</a></li>
+      </ul>
+    </div>
+    <img src="midia/icons8-linha-vertical-50.png" alt="">
+    <div class="res">
+      CNPJ: 32948294829482 <br>
+      Todos os direitos reservados
+    </div>
+    <img src="midia/icons8-linha-vertical-50.png" alt="">
+    <div class="container">
+      siga-nos nas redes sociais:
+      <div>
+        <a href=""><img src="midia/icons8-instagram-24.png" alt="instagram" width="30px"></a>
+        <a href=""><img src="midia/icons8-twitter-24.png" alt="twitter" width="30px"></a>
+        <a href=""><img src="midia/icons8-linkedin-circundado-30.png" alt="linkedin" width="30px"></a>
       </div>
     </div>
+  </div>
 
-  </body>
+</body>
+
 </html>
 
 <script src="script.js"></script>
