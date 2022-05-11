@@ -123,12 +123,14 @@ const labels = [
     '23:00'
   ];
 
-  const data = {
+
+  
+  const data1 = {
     labels: labels,
     datasets: [{
       label: 'Variação de temperatura em ºC',
-      backgroundColor: 'rgb(255, 125, 0)',
-      borderColor: 'rgb(255, 125, 00)',
+      backgroundColor: 'rgb(255, 85, 42)',
+      borderColor: 'rgb(255, 85, 42)',
       data: [23.5, 24.4, 23.7, 24, 25.4, 26.7, 26.1, 28, 27.7],
     }]
   };
@@ -136,8 +138,8 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Variação de temperatura em ºC',
-      backgroundColor: 'rgb(255, 125, 0)',
-      borderColor: 'rgb(255, 125, 00)',
+      backgroundColor: 'rgb(255, 85, 42)',
+      borderColor: 'rgb(255, 85, 42)',
       data: [24.3, 25, 24.8, 25, 26.8, 26.5, 28, 27.8, 29],
     }]
   };
@@ -145,15 +147,15 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Variação de temperatura em ºC',
-      backgroundColor: 'rgb(255, 125, 0)',
-      borderColor: 'rgb(255, 125, 00)',
+      backgroundColor: 'rgb(255, 85, 42)',
+      borderColor: 'rgb(255, 85, 42)',
       data: [24, 24.7, 23.5, 25, 24.6, 26.8, 27.3, 28.2, 27.4],
     }]
   };
 
   const granja_01 = {
     type: 'line',
-    data: data,
+    data: data1,
     options: {}
   };
   const granja_02 = {
