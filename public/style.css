@@ -637,7 +637,6 @@ CALCULADORA.HTML !
 }
 
 .container_dashboard .menu .titulo{
-    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -645,11 +644,10 @@ CALCULADORA.HTML !
 
 .container_dashboard .menu .titulo h2{
     color: white;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 .container_dashboard .menu .content{
-    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -657,15 +655,18 @@ CALCULADORA.HTML !
 
 .container_dashboard .menu .content h3{
     color: white;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
-.container_dashboard .menu .content h3 span{
-    text-decoration: underline;
+.container_dashboard .menu .botoes span{
+    color: #201E1E;
+    font-size: 2.5vw;
 }
 
 .container_dashboard .menu .botoes{
-    height: 50%;
+    justify-self: start;
+    padding-bottom: 10vh;
+    color: rgb(240, 0, 0);
 }
 
 .container_dashboard .menu .botoes button{
@@ -678,6 +679,7 @@ CALCULADORA.HTML !
     height: 7vh;
     transition: 0.5s;
     cursor: pointer;
+    margin: 0 1vw 0 1vw;
 }
 
 .container_dashboard .menu .botoes button:hover{

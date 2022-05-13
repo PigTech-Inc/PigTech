@@ -132,7 +132,20 @@ const labels = [
       backgroundColor: 'rgb(255, 85, 42)',
       borderColor: 'rgb(255, 85, 42)',
       data: [23.5, 24.4, 23.7, 24, 25.4, 26.7, 26.1, 28, 27.7],
-    }]
+    },
+    {
+      label: 'Máximo de temperatura em ºC',
+      backgroundColor: 'rgb(240, 0, 0)',
+      borderColor: 'rgb(240, 0, 0)',
+      data: [35, 35, 35, 35, 35, 35, 35, 35, 35],
+    },
+    {
+      label: 'Mínimo de temperatura em ºC',
+      backgroundColor: 'rgb(255, 85, 42)',
+      borderColor: 'rgb(255, 85, 42)',
+      data: [23.5, 24.4, 23.7, 24, 25.4, 26.7, 26.1, 28, 27.7],
+    }
+  ]
   };
   const data2 = {
     labels: labels,
