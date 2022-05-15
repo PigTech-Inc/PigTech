@@ -43,7 +43,8 @@
           </div>
           <div class="elemento_input">
             <label for="telefone"></label>
-            <input maxlength="11" class="input" type="text" placeholder="Telefone" id="input_telefone" name="telefone" />
+            <input maxlength="11" class="input" type="text" placeholder="Telefone" id="input_telefone"
+              name="telefone" />
             <span id="span_tell_alert" style="font-family:Arial;color:red;"></span>
           </div>
           <div class="elemento_input">
@@ -81,77 +82,62 @@
     var senha_confirm = input_conf_senha.value;
 
     // validação das inpts 
-
-
-      if (nomeVar == "") {
-        span_nome_alert.innerHTML = `<b>!</b>`
-      } else {
-        span_nome_alert.innerHTML = ""
-      }
-
+    if (nomeVar == "") {
+      span_nome_alert.innerHTML = "<b>!</b>"
+    } else {
+      span_nome_alert.innerHTML = ""
       if (sobrenomeVar == "") {
-        span_sobrenome_alert.innerHTML = `<b>!</b>`
+        span_sobrenome_alert.innerHTML = "<b>!</b>"
       } else {
         span_sobrenome_alert.innerHTML = ""
-      }
-
-      if (emailVar.indexOf("@") == -1) {
-        span_email_alert.innerHTML = "<b>!</b>"
-      } else {
-        span_email_alert.innerHTML = ""
-
-        if (emailVar.endsWith("gmail.com") == true || emailVar.endsWith("email.com") == true || emailVar.endsWith("hotmail.com") == true) {
-          span_email_alert.innerHTML = ""
+        if (cnpjVar.length < 14) {
+          span_cnpj_alert.innerHTML = "<b>!</b>"
         } else {
-          span_email_alert.innerHTML = "<b>!</b>"
+          span_cnpj_alert.innerHTML = ""
+          if (emailVar.indexOf('@') == -1) {
+            span_email_alert.innerHTML = "<b>!</b>"
+          } else {
+            span_email_alert.innerHTML = ""
+            if (emailVar.endsWith('gmail.com') == false ) {
+              span_email_alert.innerHTML = "<b>!</b>"
+            } else {
+              span_email_alert.innerHTML = ""
+              if (telefoneVar.length < 12) {
+                span_tell_alert.innerHTML = "<b>!</b>"
+              } else {
+                span_tell_alert.innerHTML = ""
+                if (senhaVar == "") {
+                  span_senha_alert.innerHTML = "<b>!</b>"
+                } else {
+                  mensagem.innerHTML = "<b>!</b>"
+                  if (senha_confirm != senhaVar) {
+                    span_conf_alert.innerHTML = "<b>!</b>"
+
+                  }
+                }
+              }
+            }
+          }
         }
       }
-
-      if (cnpjVar == ""){
-        span_cnpj_alert.innerHTML = "<b>!</b>"
-      }else if( cnpjVar.length == 14){
-        span_cnpj_alert.innerHTML = ""
-      }else {
-        span_cnpj_alert.innerHTML = "<b>!</b>"
-      }
-
-      if (telefoneVar.length == 12){
-        span_tell_alert.innerHTML = ""
-      }else {
-        span_tell_alert.innerHTML = "<b>!</b>"
-      }
-
-      if (senhaVar == ""){
-        span_senha_alert.innerHTML = "<b>!</b>"
-      }else{
-        span_senha_alert.innerHTML = ""
-      }
-      
-      if(senha_confirm == senhaVar){
-        span_conf_alert = ""  
-      }else {
-  
-        span_conf_alert.innerHTML = "<b>!</b>"
-      }
-
     
 
-
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        sobrenomeServer: sobrenomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        telefoneServer: telefoneVar,
-        cnpjServer: cnpjVar
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          sobrenomeServer: sobrenomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          telefoneServer: telefoneVar,
+          cnpjServer: cnpjVar
+        })
       })
-    })
+    }
   }
 
 </script>
