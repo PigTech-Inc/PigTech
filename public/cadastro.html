@@ -102,17 +102,20 @@
               span_email_alert.innerHTML = "<b>!</b>"
             } else {
               span_email_alert.innerHTML = ""
-              if (telefoneVar.length < 12) {
+              if (telefoneVar.length < 11) {
                 span_tell_alert.innerHTML = "<b>!</b>"
               } else {
                 span_tell_alert.innerHTML = ""
                 if (senhaVar == "") {
                   span_senha_alert.innerHTML = "<b>!</b>"
                 } else {
-                  mensagem.innerHTML = "<b>!</b>"
-                  if (senha_confirm != senhaVar) {
+                  span_senha_alert.innerHTML = ""
+                  if (senhaVar != senha_confirm) {
                     span_conf_alert.innerHTML = "<b>!</b>"
 
+                  }else{
+                    span_conf_alert.innerHTML = ""
+                    window.location.href="login.html"
                   }
                 }
               }
