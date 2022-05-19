@@ -19,7 +19,8 @@
 
 .header{
     color: #ffffff;
-    background-color: #04222d;
+    background-color:#201E1E;
+    border-bottom: #ff552a 1px solid;
     height: 9vh;
     display: flex;
     flex-direction: column;
@@ -102,18 +103,22 @@
 }
 
 .div_container_banner{
-    width: 550px;
-    margin-left: 10vw;
+    width:50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
     text-align: center;
-    background: rgba(0, 0, 0, 0.247);
-    border-radius: 15px;
-    
+    padding: 8vw;
 }
 
 .banner .container_banner .div_container_banner h1{
     color: rgb(255, 255, 255);
     font-size: 2.2em;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+
+.banner .container_banner .div_container_banner h1 .titulo{
+    font-size: 1.6em;
+    color: #ff552a;
 }
 
 .btn0{
@@ -496,29 +501,45 @@ CALCULADORA.HTML !
 ----------------------------------------------------
 */
 
+.banner .container_banner .mensagem_calculadora{
+    text-align: center;
+    align-self: center;
+    width: 100%;
+    height: 20%;
+    color: rgb(255, 255, 255);
+    font-size: 1.4em;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    padding: 2vh 10vw 0 10vw;
+}
+
 .calculadora {
-    /* centralizar */
-    margin: 0 auto;
+    align-self: center;
+    justify-content: center;
     width: 40vw;
+    height: 80%;
     background: #3A3636;
     padding: 20px 20px 0 20px;
     border-radius: 8px;
     color: #f5f5f5;
     box-shadow: black 0px 5px 15px;
+    margin: 2vh 0 2vh 0;
 }
 
 .titulo {
     font-weight: 600;
+    font-size: 1.8em;
 }
 
 .formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .calculadora .div_input {
-    margin-top: 2.4vh;
+    margin-top: 2vh;
     justify-self: start;
     width: 100%;
 }
@@ -528,7 +549,7 @@ CALCULADORA.HTML !
 }
 
 .span {
-    font-size: 2.3vh;
+    font-size: 2.6vh;
 }
 
 .calculadora .input {
@@ -538,19 +559,22 @@ CALCULADORA.HTML !
     font-size: 2.6vh;
     border-radius: 5px;
     transition: 0.5s;
-    margin-top: 2.2vh;
 }
 
 .calculadora .botao{
-    height: 5vh;
+    height: 8vh;
     width: 30%;
     font-size: 2.6vh;
     border-radius: 5px;
     transition: 0.5s;
     color: white;
     background-color: #ff552a;
-    margin-bottom: 2.4vh;
-    margin-top: 2.4vh;
+    margin-top: 4vh;
+}
+
+.calculadora .botao:hover{
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0) 0 3px 5px;
 }
 
 .resultados {
@@ -559,6 +583,7 @@ CALCULADORA.HTML !
     border-radius: 4px;
     font-size: 2.2vh;
     font-weight: 500;
+    margin-bottom: 2vh;
 }
 
 .valorVermelho {
@@ -609,6 +634,38 @@ CALCULADORA.HTML !
     font-size: 3.8vh;
     color: #ff552a;
     font-weight: 800;
+}
+
+.textos_calculadora{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+}
+
+.explicacao1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+    width: 80%;
+}
+
+.explicacao2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+    width: 80%;
+}
+
+.explicacao1 img{
+    margin-right: 2vw;
+}
+
+.explicacao2 img{
+    margin-left: 2vw;
 }
 
 /* -----------------------------------------------
