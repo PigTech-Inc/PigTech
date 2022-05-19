@@ -98,7 +98,7 @@
             span_email_alert.innerHTML = "<b>!</b>"
           } else {
             span_email_alert.innerHTML = ""
-            if (emailVar.endsWith('gmail.com') == false ) {
+            if (emailVar.endsWith('gmail.com') == false) {
               span_email_alert.innerHTML = "<b>!</b>"
             } else {
               span_email_alert.innerHTML = ""
@@ -113,9 +113,28 @@
                   if (senhaVar != senha_confirm) {
                     span_conf_alert.innerHTML = "<b>!</b>"
 
-                  }else{
+                  } else {
                     span_conf_alert.innerHTML = ""
-                    window.location.href="login.html"
+
+                    window.location.href = "login.html"
+                    
+                    // inserindo dados no banco
+
+                    fetch("/usuarios/cadastrar", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify({
+                        // Agora vá para o arquivo routes/usuario.js
+                        nomeServer: nomeVar,
+                        sobrenomeServer: sobrenomeVar,
+                        emailServer: emailVar,
+                        senhaServer: senhaVar,
+                        telefoneServer: telefoneVar,
+                        cnpjServer: cnpjVar
+                      })
+                    })
                   }
                 }
               }
@@ -123,24 +142,10 @@
           }
         }
       }
-    
-
-      fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          // Agora vá para o arquivo routes/usuario.js
-          nomeServer: nomeVar,
-          sobrenomeServer: sobrenomeVar,
-          emailServer: emailVar,
-          senhaServer: senhaVar,
-          telefoneServer: telefoneVar,
-          cnpjServer: cnpjVar
-        })
-      })
     }
   }
+
+
+
 
 </script>

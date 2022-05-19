@@ -16,7 +16,7 @@
       <h1><a href="index.html">PigTech</a></h1>
         <h2>A Inovação da Suinocultura!</h2>
       </div>
-      <form class="form_box" action="dashboard.html">
+      <form class="form_box">
         <div class="titulo_login">
           <h2>Faça seu login!</h2>
         </div>
@@ -31,14 +31,10 @@
             <input class="input" type="password" placeholder="Senha" id="input_senha" name="senha">
             <b style="font-family: arial; color: red;" id="span_senha_alert"></b>
           </div>
-          <div class="elemento_input">
-            <label for="conf_senha"></label>
-            <input class="input" type="password" placeholder="Confirmar Senha" id="input_conf_senha" name="conf_senha">
-            <b style="font-family: arial; color: red;" id="span_conf_alert"></b>
-          </div>
+          
         </div>
         <div class="botoes_login">
-          <input class="botao" type="submit" value="Logar" onclick="validar_login()"/>
+          <input class="botao" type="button" value="Logar" onclick="validar_login()"/>
           <a href="cadastro.html">Ainda não possúi conta?</a>
         </div>
       </form>
@@ -49,28 +45,26 @@
 </html>
 
 <script>
-  var var_email = input_email
-  var var_senha = input_senha
-  var var_conf = input_conf_senha
-
+  
   function validar_login(){
-    
-    if (var_email.indexOf('@') == -1){
+    var var_email = input_email.value
+    var var_senha = input_senha.value
+
+   
+    if (var_email == ""){
       span_alert_email.innerHTML = "!"
-    }else if (var_email.endsWith('gmail.com') == false){
+    }else if (var_email.indexOf('@') == -1){
+      span_alert_email.innerHTML = "!"
+    }else if (var_email.endsWith("gmail.com") == false){
       span_alert_email.innerHTML = "!"
     }else{
       span_alert_email.innerHTML = ""
-      if (var_senha == ""){
-        span_alert_senha = "!"
-      }else {
-        span_senha_alert.innerHTML = ""
-        if (var_conf != var_senha){
-          span_conf_alert.innerHTML = "!"
-        }else{
-          window.location.href="dashboard.html"
-        }
+      if (var_senha == "" ){
+        span_senha_alert.innerHTML = "!"
+      }else{
+        window.location = "dashboard.html"
       }
     }
+
   }
 </script>
