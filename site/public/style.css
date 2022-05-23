@@ -622,22 +622,17 @@ CALCULADORA.HTML !
 }
 
 .container_dashboard .menu .botoes{
-    justify-self: start;
-    padding-bottom: 10vh;
-    color: rgb(240, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60vh;
 }
 
 .container_dashboard .menu .botoes button{
-    border-radius: 50%;
-    background-color: white;
-    font-size: 2vw;
     color: #ff552a;
-    border: #ff552a solid 1px;
-    width: 7vh;
-    height: 7vh;
-    transition: 0.5s;
-    cursor: pointer;
-    margin: 0 1vw 0 1vw;
+    width: 50%;
+    height: 20%;
 }
 
 .container_dashboard .menu .botoes button:hover{
@@ -645,8 +640,6 @@ CALCULADORA.HTML !
     border: white 1px solid;
     background-color: #ff552a;
     box-shadow: black 0 2px 5px;
-    width: 7.5vh;
-    height: 7.5vh;
 }
 
 .container_dashboard .dashboard{
