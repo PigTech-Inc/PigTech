@@ -1,70 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig Tech - Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pig Tech - Login</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="container_forms">
-    <div class="card">
-      <div class="banner">
-      <h1><a href="index.html">PigTech</a></h1>
-        <h2>A Inovação da Suinocultura!</h2>
+  <body>
+    <div class="container_forms">
+      <div class="card">
+        <div class="banner">
+          <h1><a href="index.html">PigTech</a></h1>
+          <h2>A Inovação da Suinocultura!</h2>
+        </div>
+        <form class="form_box">
+          <div class="titulo_login">
+            <h2>Faça seu login!</h2>
+          </div>
+          <div class="inputs_login">
+            <div class="elemento_input">
+              <label for="email"></label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Email"
+                id="input_email"
+                name="email"
+              />
+              <b style="font-family: arial; color: red" id="span_alert_email"></b>
+            </div>
+            <div class="elemento_input">
+              <label for="senha"></label>
+              <input
+                class="input"
+                type="password"
+                placeholder="Senha"
+                id="input_senha"
+                name="senha"
+              />
+              <b style="font-family: arial; color: red" id="span_senha_alert"></b>
+            </div>
+          </div>
+          <div class="botoes_login">
+            <input
+              class="botao"
+              type="button"
+              value="Logar"
+              onclick="entrar()"
+            />
+            <a href="cadastro.html">Ainda não possúi conta?</a>
+          </div>
+        </form>
       </div>
-      <form class="form_box">
-        <div class="titulo_login">
-          <h2>Faça seu login!</h2>
-        </div>
-        <div class="inputs_login">
-          <div class="elemento_input">
-            <label for="email"></label>
-            <input class="input" type="text" placeholder="Email" id="input_email" name="email" />
-            <b style="font-family: arial; color: red;" id="span_alert_email"></b>
-          </div>
-          <div class="elemento_input">
-            <label for="senha"></label>
-            <input class="input" type="password" placeholder="Senha" id="input_senha" name="senha">
-            <b style="font-family: arial; color: red;" id="span_senha_alert"></b>
-          </div>
-          
-        </div>
-        <div class="botoes_login">
-          <input class="botao" type="button" value="Logar" onclick="validar_login()"/>
-          <a href="cadastro.html">Ainda não possúi conta?</a>
-        </div>
-      </form>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
 
 <script>
-  
-  function validar_login(){
-    var var_email = input_email.value
-    var var_senha = input_senha.value
+  function entrar() {
+    var emailVar = input_email.value
+    var senhaVar = input_senha.value
 
-   
-    if (var_email == ""){
-      span_alert_email.innerHTML = "!"
-    }else if (var_email.indexOf('@') == -1){
-      span_alert_email.innerHTML = "!"
-    }else if (var_email.endsWith("gmail.com") == false){
-      span_alert_email.innerHTML = "!"
-    }else{
-      span_alert_email.innerHTML = ""
-      if (var_senha == "" ){
-        span_senha_alert.innerHTML = "!"
-      }else{
-        window.location = "dashboard.html"
-      }
+    if (emailVar == "") {
+      span_alert_email.innerHTML = "!";
+      
+      return false;
+    } else if (senhaVar == "") {
+      span_senha_alert.innerHTML = "!";
+      
+      return false;
     }
 
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            setTimeout(function () {
+              window.location = "./dashboard.html";
+            }, 1000); // apenas para exibir o loading
+          });
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+
+    return false;
   }
+
 </script>
