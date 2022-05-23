@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashbord</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a href="https://pigtech.on.spiceworks.com/portal" target="_blank"><img class="help" src="midia/icons8-mensagens-de-grupo-50.png" title="Fale Conosco"></a>
+  <div class="header">
+    <div class="container_header">
+      <h1><a href="index.html">PigTech</a></h1>
+      <ul class="navbar">
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="calculadora.html">Produto</a></li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container_dashboard">
+    <div class="menu">
+      <div class="titulo">
+        <h2>Bem vindo <span id="span_nome"></span> !</h2>
+      </div>
+      <div class="content">
+        <h3>Granja atual:</h3>
+      </div>
+      <div class="botoes">
+          <button><</button><span id="span_granja_atual">granja 1</span><button>></button>
+      </div>
+    </div>
+    <div class="dashboard">
+      <div class="chart">
+        Variação De temperatura Da Granja 01
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="chart">
+        Variação De Temperatura Da Granja 02
+        <canvas id="myChart2"></canvas>
+      </div>
+
+      <div class="chart">
+        Variação De Temperatura Da Granja 03
+        <canvas id="myChart3"></canvas>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script src="script.js"></script>
