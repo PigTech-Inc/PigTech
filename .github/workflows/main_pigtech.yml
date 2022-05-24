@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'PigTech'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CEFEE15544E4BA9A3D186D0EDB9FC33 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C34A0DCA65BF48E1AAEED6323F680633 }}
           package: .
