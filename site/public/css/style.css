@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url(midia/porco.jpg);
+    background: url(../midia/porco.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -174,7 +174,7 @@
     justify-content: space-between;
     width: 50%;
     height: 100%;
-    background:linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.589)), url(midia/porco_banner.jpg);
+    background:linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.589)), url(../midia/porco_banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -217,14 +217,14 @@ transition: 0.5s;
     height: 100%;
 }
 
-.form_box .titulo{
+.container_forms .card .form_box .titulo{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 25%;
+    height: 20%;
 }
 
-.form_box .titulo_login{
+.container_forms .card .form_box .titulo_login{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -241,14 +241,13 @@ transition: 0.5s;
 .form_box .inputs_login{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 7.5vh;
-    padding-bottom: 7.5vh;
-    height: 40%;
+    justify-content: space-evenly;
+    height: 18%;
 }
 
 .form_box h2{
     color: #ff552a;
+    font-size: 6vh;
 }
 
 .form_box .input{
@@ -279,14 +278,14 @@ transition: 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 25%;
+    height: 20%;
 }
 
 .form_box .botoes_login{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 35%;
+    height: 20%;
 }
 
 .form_box .botoes .botao {
@@ -300,6 +299,7 @@ transition: 0.5s;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s;
+    margin-bottom: 1vh;
 }
 
 .form_box .botoes_login .botao {
@@ -313,6 +313,7 @@ transition: 0.5s;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s;
+    margin-bottom: 1vh;
 }
 
 .form_box .botoes .botao:hover{
@@ -333,6 +334,18 @@ transition: 0.5s;
 
 .form_box .botoes_login a{
     text-decoration: none;
+    font-size: 2.4vh;
+    color: #ff552a;
+}
+
+.form_box .botoes a:hover{
+    text-decoration: underline;
+    font-size: 2.4vh;
+    color: #ff552a;
+}
+
+.form_box .botoes_login a:hover{
+    text-decoration: underline;
     font-size: 2.4vh;
     color: #ff552a;
 }
