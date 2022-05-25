@@ -8,10 +8,10 @@ var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 
 var app = express();
 
-var indexRouter = require("../src/routes/index");
-var usuarioRouter = require("../src/routes/usuarios");
-var avisosRouter = require("../src/routes/avisos");
-var medidasRouter = require("../src/routes/medidas");
+var indexRouter = require("./src/routes/index");
+var usuarioRouter = require("./src/routes/usuarios");
+var avisosRouter = require("./src/routes/avisos");
+var medidasRouter = require("./src/routes/medidas");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
