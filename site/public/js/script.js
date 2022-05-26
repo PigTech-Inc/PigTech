@@ -197,3 +197,10 @@ const labels = [
     document.getElementById('myChart3'),
     granja_03
   );
+
+  function limparSessao() {
+    // aguardar();
+    sessionStorage.clear();
+    // finalizarAguardar();
+    window.location = "../login.html";
+  }

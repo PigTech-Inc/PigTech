@@ -9,7 +9,7 @@ sobrenome varchar(45),
 senha varchar(45),
 email varchar(45),
 dtCadastro datetime default current_timestamp,
-telFixo char(8),
+telefone char(11),
 cnpj char(14));
 
 select * from usuario;

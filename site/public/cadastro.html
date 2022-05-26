@@ -138,6 +138,7 @@
 </html>
 <script>
   function validar() {
+
     var nomeVar = input_nome.value;
     var sobrenomeVar = input_sobrenome.value;
     var email_unformated = input_email.value;
@@ -160,6 +161,7 @@
         span_sobrenome_alert.innerHTML = "";
         if (cnpjVar.length < 14) {
           span_cnpj_alert.innerHTML = `<b title="Campo CNPJ deve conter no minimo 14 caractéres">!</b>`;
+
         } else {
           span_cnpj_alert.innerHTML = "";
           if (emailVar.indexOf("@") == -1) {
