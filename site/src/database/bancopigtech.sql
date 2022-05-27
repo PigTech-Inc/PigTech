@@ -13,5 +13,3 @@ telefone char(11),
 cnpj char(14));
 
 select * from usuario;
-
-

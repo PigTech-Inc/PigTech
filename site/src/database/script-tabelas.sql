@@ -17,7 +17,10 @@ dtCadastro datetime default current_timestamp,
 telFixo char(8),
 cnpj char(14));
 
+create table granja (
+idGranja int primary key auto_increment,
 
+)
 /* para sql server - remoto - produção */
 
 CREATE TABLE usuario (

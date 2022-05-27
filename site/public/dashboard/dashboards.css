@@ -38,7 +38,7 @@ body {
 .dash-right .avisos .div-form textarea {
   width: 100%;
   /* color: #E6005A; */
-  border: 3px solid #e6005a;
+  border: 3px solid #ff552a;
   background-color: white;
   border-radius: 5px;
 }
@@ -52,7 +52,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #ff552a;
   width: 120px;
 }
 
@@ -65,7 +65,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #ff552a;
   width: 80px;
 }
 
@@ -76,7 +76,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #ff552a;
   padding: 20px;
 }
 
@@ -239,8 +239,12 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: #ff552a;
   background-color: white;
   margin: 5px;
   border-radius: 3px;
+}
+
+h3 #titulo_aquario{
+  color
 }
