@@ -92,3 +92,10 @@ function calcular() {
                 `
     div_resultado.style.padding = '8px';
 }
+
+function limparSessao() {
+    // aguardar();
+    sessionStorage.clear();
+    // finalizarAguardar();
+    window.location = "../login.html";
+}
