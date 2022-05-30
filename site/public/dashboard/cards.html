@@ -52,23 +52,23 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h2>17°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h2>19.8°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
-                    <h2>0°C</h2>
+                    <h2>22°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h2>25.2°C</h2>
                 </div>
                 <div class="item-regua perigo-quente">
                     <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h2>27.5°C</h2>
                 </div>
             </div>
 
@@ -130,7 +130,7 @@
         // setInterval(() => {
 		// 	sendData();
 		// }, 2000);
-        setTimeout(atualizacaoPeriodica, 2500);
+        setTimeout(atualizacaoPeriodica, 5000);
     }
 
     function obterdados(idGranja) {
@@ -176,6 +176,7 @@
         }
         else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
             classe_temperatura = 'cor-alerta alerta-quente';
+            alert("Temperatura abaixa do ideal!")
             console.log("caiu no 2")
         }
         else if (temperatura < limites.quente && temperatura > limites.frio) {
@@ -184,6 +185,7 @@
         }
         else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
             classe_temperatura = 'cor-alerta alerta-frio';
+            alert("Temperatura acima do ideal!")
             console.log("caiu no 4")
         }
         else if (temperatura < limites.min_temperatura) {
