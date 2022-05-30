@@ -14,35 +14,43 @@ sobrenome varchar(45),
 senha varchar(45),
 email varchar(45),
 dtCadastro datetime default current_timestamp,
-telFixo char(8),
+telefone char(11),
 cnpj char(14));
 
 create table granja (
-idGranja int primary key auto_increment,
+idGranja INT PRIMARY KEY AUTO_INCREMENT,
+descricao varchar(150)
+);
 
-)
+create table medida (
+id INT PRIMARY KEY AUTO_INCREMENT,
+temperatura DECIMAL,
+momento DATETIME,
+fk_granja INT,
+FOREIGN KEY (fk_granja) REFERENCES granja(idGranja)
+);
+
 /* para sql server - remoto - produção */
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
+create table usuario (
+idUser int primary key auto_increment,
+nome varchar(45),
+sobrenome varchar(45),
+senha varchar(45),
+email varchar(45),
+dtCadastro datetime default current_timestamp,
+telefone char(11),
+cnpj char(14));
+
+create table granja (
+idGranja INT PRIMARY KEY AUTO_INCREMENT,
+descricao varchar(150)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DOUBLE,
-	umidade DOUBLE,
-	momento DATETIME,
-	fk_aquario INT
+create table medida (
+id INT PRIMARY KEY AUTO_INCREMENT,
+temperatura DECIMAL,
+momento DATETIME,
+fk_granja INT,
+FOREIGN KEY (fk_granja) REFERENCES granja(idGranja)
 );
-
-

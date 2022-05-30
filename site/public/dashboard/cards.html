@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
+<body onload="atualizacaoPeriodica()">
 
     <div class="janela">
 
@@ -38,12 +38,6 @@
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
                     <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
                 </a>
             </div>
 
@@ -81,14 +75,14 @@
                 <div class="card">
                     <h1>Granja 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
+                        <p id="temp_granja_1">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
                     <h1>Granja 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                        <p id="temp_granja_2">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
 
@@ -96,14 +90,14 @@
                 <div class="card">
                     <h1>Granja 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                        <p id="temp_granja_3">-°C</p>
                     </div>
                     <div class="cor-alerta ideal" id="card_3"></div>
                 </div>
                 <div class="card">
                     <h1>Granja 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                        <p id="temp_granja_4">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
                 </div>
@@ -126,20 +120,20 @@
         obterdados(3);
         obterdados(4);
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+        // function sendData() {
+		// 	var http = new XMLHttpRequest();
+		// 	http.open('POST', 'http://localhost:3000/api/sendData', false);
+		// 	http.send(null);
+		// }
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
+        // setInterval(() => {
+		// 	sendData();
+		// }, 2000);
+        setTimeout(atualizacaoPeriodica, 2500);
     }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
+    function obterdados(idGranja) {
+        fetch(`/medidas/tempo-real/${idGranja}`)
             .then(resposta => {
 
                 if (resposta.ok) {
@@ -151,7 +145,7 @@
                             temperatura: resposta[0].temperatura,
                         }
 
-                        alertar(resposta[0].temperatura, idAquario);
+                        alertar(resposta[0].temperatura, idGranja);
                     });
                 } else {
 
@@ -159,12 +153,12 @@
                 }
             })
             .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+                console.error(`Erro na obtenção dos dados do granja p/ gráfico: ${error.message}`);
             });
 
     }
 
-    function alertar(temperatura, idAquario) {
+    function alertar(temperatura, idGranja) {
         var limites = {
             muito_quente: 23,
             quente: 22,
@@ -198,17 +192,17 @@
 
         var card;
 
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
+        if (idGranja == 1) {
+            temp_granja_1.innerHTML = temperatura + "°C";
             card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
+        } else if (idGranja == 2) {
+            temp_granja_2.innerHTML = temperatura + "°C";
             card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
+        } else if (idGranja == 3) {
+            temp_granja_3.innerHTML = temperatura + "°C";
             card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
+        } else if (idGranja == 4) {
+            temp_granja_4.innerHTML = temperatura + "°C";
             card = card_4
         }
 
